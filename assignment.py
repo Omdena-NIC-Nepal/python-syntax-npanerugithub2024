@@ -89,12 +89,12 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    sum = a + b
-    diff = a - b
-    mult = a * b
-    divis = a / b
-    modu =a % b
-    return (sum, diff, mult, divis, modu)
+    return {
+        "sum": a + b,
+        "difference": a - b,
+        "product": a * b,
+        "quotient": a / b if b != 0 else None
+    }
     pass
 
 def logical_ops(x, y):
@@ -107,9 +107,9 @@ def logical_ops(x, y):
         dict: Results of logical operations
     """
     return{
-        "AND": x and y,
-        "OR" : x or y,
-        "NOT_x": not x,
+        "and": x and y,
+        "or": x or y,
+        "not_x": not x,
     }
     pass
 
@@ -123,8 +123,8 @@ def bitwise_ops(a, b):
         dict: Results of bitwise operations
     """
     return{
-        "AND": a and b,
-        "OR" : a or b,
-        "XOR": a^b,
+        "and": a & b,
+        "or": a | b,
+        "xor": a ^ b,
     }
     pass
